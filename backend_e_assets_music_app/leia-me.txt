@@ -1,0 +1,30 @@
+Fala coder!
+Para instalar o backend apenas extraia os arquivos e você vai apenas precisar da pasta chamada "backend".
+Para iniciar o backend vocês precisa:
+
+1- Abrir o prompt de comando ou terminal e digitar:
+dart pub global activate json_server
+
+2- Após instalar o json_server na sua máquina você precisa pegar o ip local da sua máquina para rodar o backend,
+para isso:
+
+Windows - Abra o prompt de comando e digite ipconfig e pressione enter.
+Copie o endereço que começa com 192.168. Ele é parecido com algo como 192.168.20.3.
+
+macOS - Abra o terminal e digite ifconfig e pressione enter.
+Copie o endereço que começa com 192.168. Ele é parecido com algo como 192.168.20.3.
+
+3- Após copiar o endereço de IP abra a pasta "backend" pelo terminal ou prompt de comando e rode o seguinte:
+
+jserver -h SEU_IP_LOCAL -p 8080 -d api.json
+
+Troque SEU_IP_LOCAL para seu ip, no meu caso seria 192.168.20.3
+
+4 - Pronto! Seu backend deve estar rodando normalmente!
+
+=====================================================================================================================
+
+A pasta Assets será usada dentro do projeto do Music App, não no backend.
+
+Na primeira aula do projeto do Music App iremos mover esta pasta para dentro após a criação do projeto.
+
