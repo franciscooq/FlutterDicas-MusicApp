@@ -17,3 +17,9 @@ class GeneralException implements Exception {
     this.statusCode,
   });
 }
+
+class AudioPlayerException implements Exception {
+  final String message;
+
+  AudioPlayerException({required this.message});
+}
