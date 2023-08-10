@@ -4,6 +4,8 @@ import 'package:get/get_instance/get_instance.dart';
 import 'package:get/route_manager.dart';
 import 'package:music_app/features/genre_details/presentation/screens/genre_details_screen.dart';
 import 'package:music_app/features/genre_list/presentation/controllers/genre_list_controller.dart';
+import 'package:music_app/shared/features/music_app/presentation/controllers/music_player_controller.dart';
+import 'package:music_app/shared/features/music_app/presentation/widgets/mini_music_player_widget.dart';
 import 'package:music_app/shared/widgets/img_and_title_row_widget.dart';
 
 import '../../../../shared/widgets/screen_widget.dart';
@@ -16,6 +18,7 @@ class GenreListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final genreListCtrl = Get.find<GenreListController>();
+    final musicPlayerCtrl = Get.find<MusicPlayerController>();
 
     return Obx(
       () => ScreenWidget(
@@ -43,17 +46,15 @@ class GenreListScreen extends StatelessWidget {
                     );
                   },
                   separatorBuilder: (_, __) {
-                    return const SizedBox(
-                      height: 12,
-                    );
+                    return const SizedBox(height: 12);
                   },
                   itemCount: genreListCtrl.genres.length,
                 ),
               ),
             ),
-            const SizedBox(
-              height: 12,
-            ),
+            const SizedBox(height: 12),
+            if (musicPlayerCtrl.getPlaylistPlaying.isNotEmpty)
+              const MiniMusicPlayerWidget(),
           ],
         ),
         // error: "Ocorreu um erro.",
